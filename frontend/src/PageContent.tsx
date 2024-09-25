@@ -15,7 +15,7 @@ export default function PageContent() {
     }
 
     async function getTopics(texts: string[]) {
-        const baseApiUrl = 'http://localhost:8000'
+        const baseApiUrl = 'http://http://b944bd293339.vps.myjino.ru/api'
         try {
             setIsFetchingTopics(true)
             const response = await fetch(baseApiUrl + '/get-topics', {
