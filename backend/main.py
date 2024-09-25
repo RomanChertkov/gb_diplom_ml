@@ -21,16 +21,12 @@ app.add_middleware(
 )
 
 
-@app.get("/")
+@app.get("/api")
 async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
-
-@app.post("/get-topics")
+@app.post("/api/get-topics")
 async def get_topics(texts: list[str]):
     with open('./text_classifier_sgd', 'rb') as trained_model:
         model = pickle.load(trained_model)
